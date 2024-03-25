@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="css/sandsbaloon.css">
+<!-- Popup window -->
+<div id="popupWindow" class="popupWindow" style="display: none;">
+	<div class="speechBubble">
+		<button class="closeButton">X</button>
+	  <div class="speechIcon"></div>
+		<div class="textbox-container">
+		  <input type="text" class="sandsTextBox" id="myTextbox" placeholder="Enter text here">
+		  <button id="myButtons" class="sandsButton">Submit</button>
+		  
+		</div>
+
+
+	</div>
+</div>
+
+<div id="popupWindowNew" class="popupWindow" style="display: none;">
+	<div class="speechBubble">
+		<button class="closeButton">X</button>
+	  <div class="speechIcon"></div>
+		<div class="textbox-container">
+			<form id="myForm">
+				  <input type="text" class="sandsTextBox" id="myTextbox" placeholder="Enter text here">
+				  <input type="text" class="sandsTextBox" id="myTextbox" placeholder="Enter text here">
+				  <button id="myButtons1" class="sandsButton">OK</button>
+			 </form>
+		</div>
+	</div>
+</div>
+<!-- Your control -->
+<br><br><br><br><br><br><br><br><br><br><button id="myButton" class="sandsButton">Click me</button>
+<p>This is a  sample data to display to the user</p>
+
+<br><br><br><br><br><br><br><br><br><br><button id="myButtonNew" class="sandsButton">Click me</button>
+<p>This is a  sample data to display to the user</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/sandsbaloon.js"></script>
+<script>
+$(document).ready(function() {
+$('#myButton').click(function() {
+	//$('.speechBubble').removeClass('hidden'); // Show the speech bubble
+	sandsBaloon(this, '#popupWindow');
+    
+});
+$('#myButtonNew').click(function() {
+	//$('.speechBubble').removeClass('hidden'); // Show the speech bubble
+	sandsBaloon(this, '#popupWindowNew');
+    
+});
+
+$('#myButtons1').click(function() {
+	$('#myForm').reset();
+	$(this).closest('.popupWindow').hide();
+    
+});
+
+
+// 
+  
+
+});
+
+</script>
